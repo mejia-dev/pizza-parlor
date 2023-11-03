@@ -30,7 +30,7 @@ Pizza.prototype.calculatePrice = function () {
   } else if (this.size === "L") {
     price = 12;
   }
-  this.toppings.forEach(function (topping) {
+  this.toppings.forEach(function(topping) {
     price += 1;
   });
   return price;
@@ -91,6 +91,8 @@ function updateCartItems() {
     newCartItemToppingsList.append(newCartItemLi);
   })
   newCartItemText.append(newCartItemToppingsList);
+  let newCartItemPrice = myCart.items[myCartLatestId].calculatePrice();
+  newCartItemText.append("Price: $" + newCartItemPrice + ".00");
   newCartItem.append(newCartItemText);
   cartItemsDiv.append(newCartItem);
 }
