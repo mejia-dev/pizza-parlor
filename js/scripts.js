@@ -8,9 +8,3 @@ Cart.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
 }
-
-Cart.prototype.addItem = function(item) {
-  item.id = this.assignId();
-  this.items[item.id] = item;
-};
-
