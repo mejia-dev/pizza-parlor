@@ -62,9 +62,27 @@ function pizzaBuilderSubmit() {
 
 function updateCartItems() {
   let bannerCartItemNumber = document.getElementById("bannerCartItemNumber");
-  let myCartItemsTotal = myCart.currentId;
-  bannerCartItemNumber.innerText = myCartItemsTotal;
+  const myCartLatestId = myCart.currentId;
+  const cartItemsDiv = document.getElementById("cartItemsDiv");
+  bannerCartItemNumber.innerText = myCartLatestId;
+  let newCartItem = document.createElement("div");
+  newCartItem.setAttribute("class", "cartItem");
+  let newCartItemTitle = document.createElement("h4");
+  let newCartItemText = document.createElement("p");
+  let longformSizeName = "";
+    if (myCart.items[myCartLatestId].size === "S") {
+      longformSizeName = "Small";
+    } else if (myCart.items[myCartLatestId].size === "M") {
+      longformSizeName = "Medium";
+    } else if (myCart.items[myCartLatestId].size === "L") {
+      longformSizeName = "Large";
+    }
+  newCartItemText.append("Size: " + longformSizeName);
+  let newCartItemDetails = document.createElement("ul");
+  
 
+  newCartItemTitle.append("Pizza " + myCartLatestId)
+  cartItemsDiv.append(newCartItem);
 }
 
 window.addEventListener("load", function () {
