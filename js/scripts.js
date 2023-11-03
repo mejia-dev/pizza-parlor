@@ -63,6 +63,7 @@ function buildPizza(size, toppings) {
 function deleteCartItem(id) {
   myCart.removeItem(id);
   document.getElementById("cartItem" + id).remove();
+  updateCartIconTotal();
 }
 
 // UI Logic
@@ -74,10 +75,9 @@ function pizzaBuilderSubmit() {
 }
 
 function updateCartItems() {
-  let bannerCartItemNumber = document.getElementById("bannerCartItemNumber");
+  updateCartIconTotal();
   const myCartLatestId = myCart.currentId;
   const cartItemsDiv = document.getElementById("cartItemsDiv");
-  bannerCartItemNumber.innerText = myCartLatestId;
   let newCartItem = document.createElement("div");
   newCartItem.setAttribute("class", "cartItem");
   newCartItem.setAttribute("id", "cartItem" + myCartLatestId);
@@ -109,6 +109,16 @@ function updateCartItems() {
   newCartItem.append(newCartItemText);
   cartItemsDiv.append(newCartItem);
   document.getElementById("emptyMessage").setAttribute("class","hidden");
+}
+
+function updateCartIconTotal() {
+  let bannerCartItemNumber = document.getElementById("bannerCartItemNumber");
+  let numberOfItems = Object.keys(myCart.items).length;
+  if (numberOfItems != 0) {
+    bannerCartItemNumber.innerText = numberOfItems;
+  } else if (numberOfItems === 0) {
+    bannerCartItemNumber.innerText = "Empty";
+  }
 }
 
 function toggleCartVisibility() {
