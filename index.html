@@ -12,26 +12,36 @@
     <button id="cartButton">Cart <span id="bannerCartItemNumber">(Empty)</span></button>
   </div>
 
-<br><br>
-
-  <div id="formHolder">
-    <form id="pizzaBuilder">
-      <label><input type="radio" name="size" value="S" checked>Small</label><br>
-      <label><input type="radio" name="size" value="M">Medium</label><br>
-      <label><input type="radio" name="size" value="L">Large</label><br>
-      <br>
-      <label><input type="checkbox" name="topping" value="anchovies">Anchovies</label><br>
-      <label><input type="checkbox" name="topping" value="artichoke">Artichoke Hearts</label><br>
-      <label><input type="checkbox" name="topping" value="bellPepper">Bell Pepper</label><br>
-      <label><input type="checkbox" name="topping" value="cheese" checked>Cheese</label><br>
-      <label><input type="checkbox" name="topping" value="sausage">Italian Sausage</label><br>
-      <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label><br>
-      <label><input type="checkbox" name="topping" value="olives">Olives</label><br>
-      <label><input type="checkbox" name="topping" value="pepperoni">Pepperoni</label><br>
-      <label><input type="checkbox" name="topping" value="pineapple">Pineapple</label><br>
-      <br>
-      <button type="submit">Add Pizza to Cart</button>
-    </form>
+  <div id="cartDiv">
+    <h2>Your Cart</h2>
+    <p id="emptyMessage">Your cart is currently empty.</p>
+    <div id="cartItems">
+      
+    </div>
   </div>
+
+<br><br>
+  <div id="mainPageContent">
+    <div id="formHolder">
+      <form id="pizzaBuilder">
+        <label><input type="radio" name="size" value="S" checked>Small</label><br>
+        <label><input type="radio" name="size" value="M">Medium</label><br>
+        <label><input type="radio" name="size" value="L">Large</label><br>
+        <br>
+        <label><input type="checkbox" name="topping" value="anchovies">Anchovies</label><br>
+        <label><input type="checkbox" name="topping" value="artichoke">Artichoke Hearts</label><br>
+        <label><input type="checkbox" name="topping" value="bellPepper">Bell Pepper</label><br>
+        <label><input type="checkbox" name="topping" value="cheese" checked>Cheese</label><br>
+        <label><input type="checkbox" name="topping" value="sausage">Italian Sausage</label><br>
+        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label><br>
+        <label><input type="checkbox" name="topping" value="olives">Olives</label><br>
+        <label><input type="checkbox" name="topping" value="pepperoni">Pepperoni</label><br>
+        <label><input type="checkbox" name="topping" value="pineapple">Pineapple</label><br>
+        <br>
+        <button type="submit">Add Pizza to Cart</button>
+      </form>
+    </div>
+  </div>
+  
 </body>
 </html>
