@@ -26,7 +26,7 @@ Code: myPizza1 = new Pizza("L",["pepperoni", "pineapple"])
 Expected Output: Pizza { size: "L", toppings: ["pepperoni", "pineapple"]}
 
 
-Describe: calculatePrice()
+Describe: Pizza.prototype.calculatePrice
 
 Test: "It will return the cost of a Pizza object based on the pizza's size. S=8, M=10, L=12"
 Code: 

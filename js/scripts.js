@@ -21,18 +21,20 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
-
-// Business Logic
-function calculatePizzaPrice(pizza) {
+Pizza.prototype.calculatePrice = function() {
   let price = 0;
-  if (pizza.size === "S") {
-
-  } else if (pizza.size === "M") {
-
-  } else if (pizza.size === "L") {
-
+  if (this.size === "S") {
+    price = 8;
+  } else if (this.size === "M") {
+    price = 10;
+  } else if (this.size === "L") {
+    price = 12;
   }
-  pizza.toppings.forEach(function(topping) {
+  this.toppings.forEach(function(topping) {
     price += 1;
   });
+  return price;
 }
+
+
+// Business Logic
