@@ -22,24 +22,35 @@
     </div>
   </div>
 
-<br><br>
   <div id="mainPageContent">
+    <br>
+    <h1>Order a Pizza</h1>
+
     <div id="formHolder">
       <form id="pizzaBuilder">
+        <h4>Choose a size:</h4>
         <label><input type="radio" name="size" value="S" checked>Small</label><br>
         <label><input type="radio" name="size" value="M">Medium</label><br>
         <label><input type="radio" name="size" value="L">Large</label><br>
         <br>
-        <label><input type="checkbox" name="topping" value="anchovies">Anchovies</label><br>
-        <label><input type="checkbox" name="topping" value="artichoke">Artichoke Hearts</label><br>
-        <label><input type="checkbox" name="topping" value="bellPepper">Bell Pepper</label><br>
-        <label><input type="checkbox" name="topping" value="cheese" checked>Cheese</label><br>
-        <label><input type="checkbox" name="topping" value="sausage">Italian Sausage</label><br>
-        <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label><br>
-        <label><input type="checkbox" name="topping" value="olives">Olives</label><br>
-        <label><input type="checkbox" name="topping" value="pepperoni">Pepperoni</label><br>
-        <label><input type="checkbox" name="topping" value="pineapple">Pineapple</label><br>
-        <br>
+        <h4>Choose toppings:</h4>
+        <div id="toppingsHolder">
+          <div id="toppingsOptionsHolderA">
+            <label><input type="checkbox" name="topping" value="anchovies">Anchovies</label><br>
+            <label><input type="checkbox" name="topping" value="artichoke">Artichoke Hearts</label><br>
+            <label><input type="checkbox" name="topping" value="bbq">Barbecue Sauce</label><br>
+            <label><input type="checkbox" name="topping" value="bellPepper">Bell Pepper</label><br>
+            <label><input type="checkbox" name="topping" value="cheese" checked>Cheese</label><br>
+          </div>
+          <div id="toppingsOptionsHolderB">
+            <label><input type="checkbox" name="topping" value="sausage">Italian Sausage</label><br>
+            <label><input type="checkbox" name="topping" value="mushrooms">Mushrooms</label><br>
+            <label><input type="checkbox" name="topping" value="olives">Olives</label><br>
+            <label><input type="checkbox" name="topping" value="pepperoni">Pepperoni</label><br>
+            <label><input type="checkbox" name="topping" value="pineapple">Pineapple</label><br>
+          </div>
+        </div> 
+        <br><br>
         <button type="submit">Add Pizza to Cart</button>
       </form>
     </div>
