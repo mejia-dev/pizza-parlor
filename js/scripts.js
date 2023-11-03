@@ -23,3 +23,16 @@ function Pizza(size, toppings) {
 
 
 // Business Logic
+function calculatePizzaPrice(pizza) {
+  let price = 0;
+  if (pizza.size === "S") {
+
+  } else if (pizza.size === "M") {
+
+  } else if (pizza.size === "L") {
+
+  }
+  pizza.toppings.forEach(function(topping) {
+    price += 1;
+  });
+}
