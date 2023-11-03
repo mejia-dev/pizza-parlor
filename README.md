@@ -75,6 +75,13 @@ Code: myCart().addItem(myObject)
 Expected Output: myCart(items:{1})
 
 
+Describe: Cart.prototype.removeItem
+
+Test: "It will remove an object from the Cart's 'items' property by id"
+Code: myCart().removeItem(1);
+Expected Output: true;
+
+
 Describe: Pizza()
 
 Test: "It will construct a new Pizza object with a string property for size, and an array property for toppings"
@@ -105,3 +112,10 @@ Expected Output: Pizza { size: "L", toppings: ["pepperoni", "pineapple"]}
 Test: "It will add the new Pizza object to the global cart."
 Code: buildPizza("L", ["pepperoni", "pineapple"])
 Expected Output: myCart { items: "Pizza { id: 1, size: "L", toppings: ["pepperoni", "pineapple"]}" }
+
+
+Describe: deleteCartItem(id)
+
+Test: "It will remove the associated pizza object from the global myCart using the prototype removeItem"
+Code: deleteCartItem(1)
+Expected Output: undefined

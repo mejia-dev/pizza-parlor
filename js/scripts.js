@@ -14,6 +14,14 @@ Cart.prototype.addItem = function (item) {
   this.items[item.id] = item;
 };
 
+Cart.prototype.removeItem = function (id) {
+  if (this.items[id] === undefined) {
+    return false;
+  }
+  delete this.items[id];
+  return true;
+};
+
 
 // Business Logic for Pizza constructor
 function Pizza(size, toppings) {
@@ -52,6 +60,9 @@ function buildPizza(size, toppings) {
   updateCartItems()
 }
 
+function deleteCartItem(id) {
+  myCart.removeItem(id);
+}
 
 // UI Logic
 function pizzaBuilderSubmit() {
