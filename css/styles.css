@@ -1,3 +1,14 @@
 .hidden {
   display: none;
 }
+
+#banner {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  
+}
+
+#cartDiv {
+  float: right;
+}
