@@ -38,3 +38,14 @@ Test: "It will return the cost of a Pizza object based on the number of the pizz
 Code: myPizza1 = new Pizza("L",["pepperoni", "pineapple"]);
 calculatePrice(myPizza1);
 Expected Output: 14
+
+
+Describe: buildPizza(size, toppings)
+
+Test: "It will use constructors to build a new Pizza object."
+Code: buildPizza("L", ["pepperoni", "pineapple"])
+Expected Output: Pizza { size: "L", toppings: ["pepperoni", "pineapple"]}
+
+Test: "It will add the new Pizza object to the global cart."
+Code: buildPizza("L", ["pepperoni", "pineapple"])
+Expected Output: myCart { items: "Pizza { id: 1, size: "L", toppings: ["pepperoni", "pineapple"]}" }
