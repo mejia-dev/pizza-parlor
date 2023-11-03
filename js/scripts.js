@@ -62,6 +62,7 @@ function buildPizza(size, toppings) {
 
 function deleteCartItem(id) {
   myCart.removeItem(id);
+  document.getElementById("cartItem" + id).remove();
 }
 
 // UI Logic
@@ -79,6 +80,7 @@ function updateCartItems() {
   bannerCartItemNumber.innerText = myCartLatestId;
   let newCartItem = document.createElement("div");
   newCartItem.setAttribute("class", "cartItem");
+  newCartItem.setAttribute("id", "cartItem" + myCartLatestId);
   let newCartItemTitle = document.createElement("h4");
   newCartItemTitle.append("Pizza " + myCartLatestId)
   newCartItem.append(newCartItemTitle);
