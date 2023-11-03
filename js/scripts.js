@@ -41,17 +41,23 @@ Pizza.prototype.calculatePrice = function () {
 let myCart = new Cart;
 
 
+// Business Logic
+function buildPizza(size, toppings) {
+  let toppingArray = [];
+  for (let i = 0; i < toppings.length; i++) {
+    toppingArray.push(toppings[i].value);
+  }
+  const newPizza = new Pizza(size, toppingArray);
+  myCart.addItem(newPizza);
+}
+
+
 // UI Logic
 function pizzaBuilderSubmit() {
   event.preventDefault();
   const sizeSelection = document.querySelector("input[name='size']:checked").value;
   const toppingSelection = document.querySelectorAll("input[name='topping']:checked").value;
-  let toppingArray = [];
-  for (let i = 0; i < toppingSelection.length; i++) {
-    toppingArray.push(toppingSelection[i].value);
-  }
-  const newPizza = new Pizza(sizeSelection, toppingArray);
-  myCart.addItem(newPizza)
+  buildPizza(sizeSelection, toppingSelection);
 }
 
 window.addEventListener("load", function () {
