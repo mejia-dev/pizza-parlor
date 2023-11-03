@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: row;
   text-align: center;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: #a90b34;
+  box-shadow: 5px 10px 10px black;
   
 }
 
