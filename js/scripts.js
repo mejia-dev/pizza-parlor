@@ -97,6 +97,12 @@ function updateCartItems() {
   cartItemsDiv.append(newCartItem);
 }
 
+function toggleCartVisibility() {
+  event.preventDefault();
+  document.getElementById("cartDiv").classList.toggle("hidden");
+};
+
 window.addEventListener("load", function () {
   this.document.getElementById("pizzaBuilder").addEventListener("submit", pizzaBuilderSubmit)
+  this.document.getElementById("cartButton").addEventListener("click", toggleCartVisibility)
 });
