@@ -49,6 +49,7 @@ function buildPizza(size, toppings) {
   }
   const newPizza = new Pizza(size, toppingArray);
   myCart.addItem(newPizza);
+  updateCartItems()
 }
 
 
@@ -68,20 +69,29 @@ function updateCartItems() {
   let newCartItem = document.createElement("div");
   newCartItem.setAttribute("class", "cartItem");
   let newCartItemTitle = document.createElement("h4");
+  newCartItemTitle.append("Pizza " + myCartLatestId)
+  newCartItem.append(newCartItemTitle);
   let newCartItemText = document.createElement("p");
   let longformSizeName = "";
-    if (myCart.items[myCartLatestId].size === "S") {
-      longformSizeName = "Small";
-    } else if (myCart.items[myCartLatestId].size === "M") {
-      longformSizeName = "Medium";
-    } else if (myCart.items[myCartLatestId].size === "L") {
-      longformSizeName = "Large";
-    }
+  if (myCart.items[myCartLatestId].size === "S") {
+    longformSizeName = "Small";
+  } else if (myCart.items[myCartLatestId].size === "M") {
+    longformSizeName = "Medium";
+  } else if (myCart.items[myCartLatestId].size === "L") {
+    longformSizeName = "Large";
+  }
   newCartItemText.append("Size: " + longformSizeName);
-  let newCartItemDetails = document.createElement("ul");
-  
-
-  newCartItemTitle.append("Pizza " + myCartLatestId)
+  newCartItemText.append(document.createElement("br"));
+  newCartItemText.append("Toppings:");
+  let newCartItemToppingsList = document.createElement("ul");
+  let newCartItemToppings = myCart.items[myCartLatestId].toppings;
+  newCartItemToppings.forEach(function (topping) {
+    let newCartItemLi = document.createElement("li");
+    newCartItemLi.append(topping);
+    newCartItemToppingsList.append(newCartItemLi);
+  })
+  newCartItemText.append(newCartItemToppingsList);
+  newCartItem.append(newCartItemText);
   cartItemsDiv.append(newCartItem);
 }
 
