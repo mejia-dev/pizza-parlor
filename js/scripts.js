@@ -30,7 +30,7 @@ Pizza.prototype.calculatePrice = function () {
   } else if (this.size === "L") {
     price = 12;
   }
-  this.toppings.forEach(function(topping) {
+  this.toppings.forEach(function (topping) {
     price += 1;
   });
   return price;
@@ -95,6 +95,7 @@ function updateCartItems() {
   newCartItemText.append("Price: $" + newCartItemPrice + ".00");
   newCartItem.append(newCartItemText);
   cartItemsDiv.append(newCartItem);
+  document.getElementById("emptyMessage").setAttribute("class","hidden");
 }
 
 function toggleCartVisibility() {
