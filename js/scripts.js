@@ -4,7 +4,12 @@ function Cart() {
   this.currentId = 0;
 }
 
-Cart.prototype.assignId = function() {
+Cart.prototype.assignId = function () {
   this.currentId += 1;
   return this.currentId;
 }
+
+Cart.prototype.addItem = function (item) {
+  item.id = this.assignId();
+  this.items[item.id] = item;
+};
