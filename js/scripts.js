@@ -60,6 +60,13 @@ function pizzaBuilderSubmit() {
   buildPizza(sizeSelection, toppingSelection);
 }
 
+function updateCartItems() {
+  let bannerCartItemNumber = document.getElementById("bannerCartItemNumber");
+  let myCartItemsTotal = myCart.currentId;
+  bannerCartItemNumber.innerText = myCartItemsTotal;
+
+}
+
 window.addEventListener("load", function () {
   this.document.getElementById("pizzaBuilder").addEventListener("submit", pizzaBuilderSubmit)
 });
