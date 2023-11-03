@@ -21,7 +21,7 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
-Pizza.prototype.calculatePrice = function() {
+Pizza.prototype.calculatePrice = function () {
   let price = 0;
   if (this.size === "S") {
     price = 8;
@@ -30,11 +30,30 @@ Pizza.prototype.calculatePrice = function() {
   } else if (this.size === "L") {
     price = 12;
   }
-  this.toppings.forEach(function(topping) {
+  this.toppings.forEach(function (topping) {
     price += 1;
   });
   return price;
+};
+
+
+// Global Variables
+let myCart = new Cart;
+
+
+// UI Logic
+function pizzaBuilderSubmit() {
+  event.preventDefault();
+  const sizeSelection = document.querySelector("input[name='size']:checked").value;
+  const toppingSelection = document.querySelectorAll("input[name='topping']:checked").value;
+  let toppingArray = [];
+  for (let i = 0; i < toppingSelection.length; i++) {
+    toppingArray.push(toppingSelection[i].value);
+  }
+  const newPizza = new Pizza(sizeSelection, toppingArray);
+  myCart.addItem(newPizza)
 }
 
-
-// Business Logic
+window.addEventListener("load", function () {
+  this.document.getElementById("pizzaBuilder").addEventListener("submit", pizzaBuilderSubmit)
+});
