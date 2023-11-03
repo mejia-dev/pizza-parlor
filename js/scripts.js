@@ -13,3 +13,13 @@ Cart.prototype.addItem = function (item) {
   item.id = this.assignId();
   this.items[item.id] = item;
 };
+
+
+// Business Logic for Pizza constructor
+function Pizza(size, toppings) {
+  this.size = size;
+  this.toppings = toppings;
+}
+
+
+// Business Logic
