@@ -108,7 +108,7 @@ function updateCartItems() {
   newCartItemText.append("Price: $" + newCartItemPrice + ".00");
   newCartItem.append(newCartItemText);
   cartItemsDiv.append(newCartItem);
-  document.getElementById("emptyMessage").setAttribute("class","hidden");
+  document.getElementById("emptyMessage").setAttribute("class", "hidden");
 }
 
 function updateCartIconTotal() {
