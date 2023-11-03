@@ -56,7 +56,7 @@ function buildPizza(size, toppings) {
 function pizzaBuilderSubmit() {
   event.preventDefault();
   const sizeSelection = document.querySelector("input[name='size']:checked").value;
-  const toppingSelection = document.querySelectorAll("input[name='topping']:checked").value;
+  const toppingSelection = document.querySelectorAll("input[name='topping']:checked");
   buildPizza(sizeSelection, toppingSelection);
 }
 
