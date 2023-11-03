@@ -106,6 +106,12 @@ function updateCartItems() {
   newCartItemText.append(newCartItemToppingsList);
   let newCartItemPrice = myCart.items[myCartLatestId].calculatePrice();
   newCartItemText.append("Price: $" + newCartItemPrice + ".00");
+  newCartItemText.append(document.createElement("br"));
+  let newCartItemDeleteButton = document.createElement("span")
+  newCartItemDeleteButton.setAttribute("class","cartRemoveItemButton");
+  newCartItemDeleteButton.setAttribute("onclick","deleteCartItem(" + myCartLatestId + ")");
+  newCartItemDeleteButton.append("Remove");
+  newCartItemText.append(newCartItemDeleteButton);
   newCartItem.append(newCartItemText);
   cartItemsDiv.append(newCartItem);
   document.getElementById("emptyMessage").setAttribute("class", "hidden");
