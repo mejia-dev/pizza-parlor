@@ -10,7 +10,14 @@
   width: 100%;
   background-color: #a90b34;
   box-shadow: 5px 10px 10px black;
-  
+  border-radius: 10px;
+}
+
+#bannerLogo {
+  width: 20%;
+  height: auto;
+  float: left;
+  display: block;
 }
 
 #cartDiv {
