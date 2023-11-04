@@ -38,7 +38,7 @@ Pizza.prototype.calculatePrice = function () {
   } else if (this.size === "L") {
     price = 12;
   }
-  this.toppings.forEach(function (topping) {
+  this.toppings.forEach(function () {
     price += 1;
   });
   return price;
