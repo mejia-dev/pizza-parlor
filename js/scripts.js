@@ -7,7 +7,7 @@ function Cart() {
 Cart.prototype.assignId = function () {
   this.currentId += 1;
   return this.currentId;
-}
+};
 
 Cart.prototype.addItem = function (item) {
   item.id = this.assignId();
@@ -57,7 +57,7 @@ function buildPizza(size, toppings) {
   }
   const newPizza = new Pizza(size, toppingArray);
   myCart.addItem(newPizza);
-  updateCartItems()
+  updateCartItems();
 }
 
 function deleteCartItem(id) {
@@ -82,7 +82,7 @@ function updateCartItems() {
   newCartItem.setAttribute("class", "cartItem");
   newCartItem.setAttribute("id", "cartItem" + myCartLatestId);
   let newCartItemTitle = document.createElement("h4");
-  newCartItemTitle.append("Pizza " + myCartLatestId)
+  newCartItemTitle.append("Pizza " + myCartLatestId);
   newCartItem.append(newCartItemTitle);
   let newCartItemText = document.createElement("p");
   let longformSizeName = "";
@@ -102,12 +102,12 @@ function updateCartItems() {
     let newCartItemLi = document.createElement("li");
     newCartItemLi.append(topping);
     newCartItemToppingsList.append(newCartItemLi);
-  })
+  });
   newCartItemText.append(newCartItemToppingsList);
   let newCartItemPrice = myCart.items[myCartLatestId].calculatePrice();
   newCartItemText.append("Price: $" + newCartItemPrice + ".00");
   newCartItemText.append(document.createElement("br"));
-  let newCartItemDeleteButton = document.createElement("span")
+  let newCartItemDeleteButton = document.createElement("span");
   newCartItemDeleteButton.setAttribute("class","cartRemoveItemButton");
   newCartItemDeleteButton.setAttribute("onclick","deleteCartItem(" + myCartLatestId + ")");
   newCartItemDeleteButton.append("Remove");
@@ -130,9 +130,9 @@ function updateCartIconTotal() {
 function toggleCartVisibility() {
   event.preventDefault();
   document.getElementById("cartDiv").classList.toggle("hidden");
-};
+}
 
 window.addEventListener("load", function () {
-  this.document.getElementById("pizzaBuilder").addEventListener("submit", pizzaBuilderSubmit)
-  this.document.getElementById("cartButton").addEventListener("click", toggleCartVisibility)
+  this.document.getElementById("pizzaBuilder").addEventListener("submit", pizzaBuilderSubmit);
+  this.document.getElementById("cartButton").addEventListener("click", toggleCartVisibility);
 });
