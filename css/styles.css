@@ -53,6 +53,10 @@ body {
   background-color: whitesmoke;
 }
 
+.cartRemoveItemButton {
+  color: red;
+}
+
 #mainPageContent {
   text-align: center;
   display: flex;
